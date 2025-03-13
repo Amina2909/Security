@@ -13,6 +13,14 @@
     <label for="email">Email:</label>
     <input type="email" id="email" th:field="*{email}" required>
     <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" th:field="*{password}" required>
+    <br>
+    <label for="roles">Roles:</label>
+    <select id="roles" th:field="*{roles}" multiple>
+        <option th:each="role : ${allRoles}" th:value="${role.id}" th:text="${role.name}"></option>
+    </select>
+    <br>
     <button type="submit">Add User</button>
 </form>
 <a href="/admin">Back to Users</a>
